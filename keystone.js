@@ -27,7 +27,7 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': 'x9g@+);fKZn0Dzbs8R=/sGm*f}~b?U_T5(z/U6epQ#s,,?FZ=JW$g^~uJH]+.$.s',
-	'mongo': 'mongodb://IP-ADDRESS'
+	'mongo': 'mongodb://user:password@IP-ADDRESS/db-name'
 		
 		
 });

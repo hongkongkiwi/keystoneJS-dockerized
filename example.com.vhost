@@ -1,0 +1,19 @@
+server {
+    server_name example.com;
+    access_log off;
+    root /var/www;
+    error_page 503 /maintenance.html;
+    location /maintenance.html {
+	 # allow access to this specific page
+    }
+    location / {
+#	return 503;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:60000;
+    }
+    location = /admin {
+        return 301 /keystone;
+    }
+}

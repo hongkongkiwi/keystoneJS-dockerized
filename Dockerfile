@@ -2,6 +2,7 @@ FROM nodesource/trusty:0.12.0
 
 # copy source directory
 COPY    ./keystone /app
+COPY  	./run.sh /app/run.sh
 
 # Install app dependencies
 RUN		npm install -g pm2;
